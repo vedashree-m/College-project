@@ -1,0 +1,140 @@
+<!-- about.html -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans relative">
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-green-800 text-white transform -translate-x-full transition-transform duration-300 z-40 shadow-lg">
+    <div class="p-6 font-bold text-xl border-b border-green-600">Modules</div>
+    <ul class="p-4 space-y-5">
+      <li><a href="landing.html" class="hover:text-green-300 block py-2">Home</a></li>
+      <li><a href="features.html" class="hover:text-green-300 block py-2">Features</a></li>
+      <li><a href="about.html" class="hover:text-green-300 block py-2">About</a></li>
+      <li><a href="prediction.html" class="hover:text-green-300 block py-2">Prediction</a></li>
+      <li><a href="vet.html" class="hover:text-green-300 block py-2">Claws Medical</a></li>
+       <li><a href="medii.html" class="hover:text-green-300 block py-2">Medical Support</a></li>
+      <li><a href="healthreport.html" class="hover:text-green-300 block py-2">Health Reports</a></li>
+    </ul>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30"></div>
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center bg-green-700 text-white p-4 shadow-md relative z-50">
+    <button id="menuBtn" class="text-white text-3xl focus:outline-none mr-4">&#9776;</button>
+    <h1 class="text-2xl font-bold">Livestock Health System</h1>
+    <a href="contact.html" class="bg-white text-green-700 font-semibold px-4 py-2 rounded hover:bg-green-100 transition">
+      Contact Us
+    </a>
+  </header>
+
+  <!-- About Section -->
+  <section class="max-w-5xl mx-auto p-8 relative z-10">
+    <h2 class="text-3xl font-bold text-green-800 mb-6">About the Project</h2>
+    <p class="text-gray-700 leading-relaxed mb-6">
+      Our Livestock Health Monitoring System is a robust, real-time solution that integrates modern technology with traditional animal husbandry practices. The project is focused on early disease detection and proactive livestock management using wearable sensors, AI-driven predictions, and cloud integration via Firebase and Flask.
+    </p>
+    <p class="text-gray-700 leading-relaxed mb-6">
+      This innovative platform collects physiological parameters like temperature, heart rate, and activity levels using IoT devices. These metrics are processed in a Python-powered Flask backend and visualized for farmers using a responsive web dashboard. With Firebase Authentication, user access is secure and role-based.
+    </p>
+    <h3 class="text-2xl font-semibold text-green-700 mt-8 mb-2">Key Features:</h3>
+    <ul class="list-disc list-inside text-gray-700 mb-6">
+      <li>Real-time health data monitoring</li>
+      <li>AI-based disease prediction</li>
+      <li>Chart.js data visualization</li>
+      <li>Secure login with Firebase Auth</li>
+      <li>Modular UI with 10 interactive pages</li>
+      <li>Fully mobile responsive (Tailwind CSS)</li>
+    </ul>
+    <h3 class="text-2xl font-semibold text-green-700 mt-8 mb-2">Vision and Impact</h3>
+    <p class="text-gray-700 leading-relaxed mb-6">
+      The system aims to reduce livestock mortality, improve farm productivity, and minimize economic losses caused by late diagnosis. By combining AI and IoT, it allows farmers and veterinarians to act quickly and make informed decisions.
+    </p>
+    <h3 class="text-2xl font-semibold text-green-700 mt-8 mb-2">Technology Stack</h3>
+    <ul class="list-disc list-inside text-gray-700 mb-6">
+      <li><strong>Frontend:</strong> HTML, TailwindCSS, JavaScript, Chart.js</li>
+      <li><strong>Backend:</strong> Flask (Python)</li>
+      <li><strong>Authentication:</strong> Firebase Auth</li>
+      <li><strong>Hosting:</strong> Firebase Hosting / Render</li>
+      <li><strong>Data:</strong> Live sensor feeds + mock data for testing</li>
+    </ul>
+    <h3 class="text-2xl font-semibold text-green-700 mt-8 mb-2">Future Plans</h3>
+    <p class="text-gray-700 leading-relaxed mb-6">
+      We plan to expand the platform by integrating mobile apps, support for voice commands, offline data sync for remote areas, and predictive models using time-series analysis and ML algorithms to improve forecast accuracy.
+    </p>
+  </section>
+
+  <!-- Collapsible Sections -->
+  <section class="max-w-5xl mx-auto p-8 relative z-10">
+    <h2 class="text-3xl font-bold text-green-800 mb-6">Project Overview (Collapsible)</h2>
+
+    <div class="mb-4">
+      <button class="w-full text-left bg-green-100 p-4 rounded-t-lg font-semibold toggle-btn" data-target="section1">📌 Project Vision</button>
+      <div id="section1" class="hidden bg-white p-4 border border-t-0 border-green-200">
+        <p>
+          Our vision is to build a smarter, data-driven livestock care ecosystem, ensuring preventive healthcare rather than reactive treatment.
+        </p>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <button class="w-full text-left bg-green-100 p-4 font-semibold toggle-btn" data-target="section2">💡 Core Modules</button>
+      <div id="section2" class="hidden bg-white p-4 border border-t-0 border-green-200">
+        <ul class="list-disc list-inside">
+          <li>Real-Time Monitoring</li>
+          <li>Disease Prediction</li>
+          <li>Authentication</li>
+          <li>Health Reports</li>
+          <li>Dashboard & Visuals</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <button class="w-full text-left bg-green-100 p-4 font-semibold toggle-btn" data-target="section3">🔧 Technologies Used</button>
+      <div id="section3" class="hidden bg-white p-4 border border-t-0 border-green-200">
+        <p>
+          TailwindCSS for frontend design, Flask for backend logic, Firebase for user authentication and deployment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Sidebar menu toggle
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      const menuBtn = document.getElementById('menuBtn');
+
+      menuBtn.addEventListener('click', () => {
+        sidebar.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+      });
+
+      overlay.addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+      });
+
+      // Collapsible toggle
+      document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const target = document.getElementById(button.getAttribute('data-target'));
+          target.classList.toggle('hidden');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
