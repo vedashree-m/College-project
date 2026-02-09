@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <script src="main.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('background.jpg') no-repeat center center ;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(2px);
+      z-index: -1;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .slide-in {
+      animation: slideIn 1.5s ease-out forwards;
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .image-animate {
+      transform: scale(1);
+      transition: transform 1s ease-in-out;
+    }
+
+    .image-animate:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen text-white bg-opacity-90">
+
+  <!-- Heading Section -->
+  <header class="bg-green-800 bg-opacity-90 text-white text-center py-6 shadow-xl">
+    <h1 class="text-4xl font-extrabold uppercase tracking-wider">AI for Livestock Health Monitoring and Early Disease Detection</h1>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav class="bg-green-900 bg-opacity-90 text-white px-6 py-4 flex flex-wrap justify-center gap-6 shadow-lg z-50">
+    <a href="features.html" class="hover:bg-green-600 px-4 py-2 rounded transition duration-300">Features</a>
+    <a href="about.html" class="hover:bg-green-600 px-4 py-2 rounded transition duration-300">About</a>
+    <a href="prediction.html" class="hover:bg-green-600 px-4 py-2 rounded transition duration-300">Prediction</a>
+     <a href="vet.html" class="hover:bg-green-600 px-4 py-2 rounded transition duration-300">Claws Medical</a>
+    <a href="medii.html" class="hover:bg-green-600 px-4 py-2 rounded transition duration-300">Medical Support</a>
+    <a href="healthreport.html" class="hover:bg-green-600 px-4 py-2 rounded transition duration-300">Health Reports</a>
+    <a href="chatbot.html" class="hover:bg-green-600 px-4 py-2 rounded transition duration-300">Chatbot</a>
+    <a href="contact.html" class="hover:bg-green-600 px-4 py-2 rounded transition duration-300">Contact</a>
+    <a href="logout.html">
+      <button onclick="logout()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded transition duration-300">Logout</button>
+    </a>
+  </nav>
+
+  <!-- Spacer for Image Visibility -->
+  <div class="h-60"></div>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-10 flex flex-col justify-end items-center fade-in bg-green-100 bg-opacity-70 mt-auto mx-10 rounded-xl shadow-xl">
+    <h2 class="text-5xl font-extrabold text-green-900 mb-6 drop-shadow-lg text-center">Welcome to the Livestock Monitoring System</h2>
+    <p class="text-lg text-gray-800 mb-10 text-center max-w-2xl leading-relaxed">
+      Empower your agricultural operations with cutting-edge technology. Monitor your livestock's health in real-time, generate detailed reports, and predict health risks using AI and data analytics.
+    </p>
+    <a href="prediction.html" class="bg-green-700 hover:bg-green-800 text-white text-lg font-semibold px-10 py-4 rounded-full shadow-xl transition-transform transform hover:scale-105">
+      Explore Health Prediction
+    </a>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-900 bg-opacity-90 text-white text-center py-6 mt-16 shadow-inner">
+    <p class="text-sm tracking-wide">&copy;  2025 AI for Livestock Health Monitoring System.</p>
+  </footer>
+
+</body>
+</html>
