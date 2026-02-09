@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #0073e6;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Buttons */
+.contact-btn, .cta-btn {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-btn {
+    background: #ffa500;
+}
+
+.contact-btn:hover {
+    background: #ff8c00;
+}
+
+.cta-btn {
+    background: #28a745;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.cta-btn:hover {
+    background: #218838;
+}
+
+/* Hero Section */
+.hero {
+    background: url('livestock.jpg') center/cover no-repeat;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+}
+
+/* Containers */
+.monitor, .manual-entry, .contact-form, .content {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    width: 50%;
+}
+
+.monitor h2 {
+    color: #0073e6;
+}
+
+/* Data Display */
+.data-container {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Input Fields */
+input {
+    padding: 8px;
+    margin: 5px;
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Contact Form */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.contact-form button {
+    margin-top: 15px;
+    background-color: #007bff;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #0073e6;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}

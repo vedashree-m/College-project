@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medical Solution</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e6f9ee, #dff8ec);
+    }
+
+    header, footer {
+      background-color: #065f46;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .back-home {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ffffff33;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .back-home:hover {
+      background-color: #ffffff66;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    .medicine {
+      display: flex;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      align-items: center;
+      background-color: #ffffffcc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .medicine img {
+      width: 100px;
+      height: 100px;
+      margin-right: 1rem;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .info {
+      flex-grow: 1;
+    }
+
+    .buy-btn {
+      background-color: #065f46;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .buy-btn:hover {
+      background-color: #054434;
+    }
+
+    .hamburger {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .dropdown-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 250px;
+      background-color: #065f46;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .dropdown.show .dropdown-menu {
+      transform: translateX(0);
+    }
+
+    .dropdown-menu a {
+      color: white;
+      padding: 1rem 0;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a.active {
+      background-color: #047857;
+      padding-left: 1rem;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+
+    .dropdown.show + .overlay {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="dropdown" id="dropdown">
+      <button class="hamburger" onclick="toggleMenu(event)">☰</button>
+      <div class="dropdown-menu" id="menu">
+         <a href="landing.html" class="nav-link"> Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="prediction.html" class="nav-link">Prediction</a>
+        <a href="vet.html" class="nav-link">Claws Medical</a>
+        <a href="medii.html" class="nav-link">Medical Support</a>
+        <a href="healthreport.html" class="nav-link">Health Reports</a>
+       
+      </div>
+    </div>
+    <h1>Medical Solution</h1>
+    <a href="contact.html" class="back-home">
+      Contact Us
+    </a>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="container">
+     <div class="medicine">
+      <img src="OxytetracyclineLA.jpg" alt="Oxytetracycline">
+      <div class="info">
+        <h2>Oxytetracycline</h2>
+        <p><strong>Cost:</strong> ₹250</p>
+        <p><strong>Info:</strong> Broad-spectrum antibiotic used to treat infections in cows.</p>
+        <p><strong>Steps:</strong> Administer intramuscularly once daily under vet supervision.</p>
+        <button class="buy-btn" onclick="makePayment(250, 'Oxytetracycline')">Buy</button>
+      </div>
+    </div>
+    <div class="medicine">
+      <img src="Ivermectin.jpg" alt="Ivermectin">
+      <div class="info">
+        <h2>Ivermectin</h2>
+        <p><strong>Cost:</strong> ₹180</p>
+        <p><strong>Info:</strong> Used for parasite control including worms, lice, and mites.</p>
+        <p><strong>Steps:</strong> Apply subcutaneously or as directed by a vet.</p>
+        <button class="buy-btn" onclick="makePayment(180, 'Ivermectin')">Buy</button>
+      </div>
+    </div>
+    <div class="medicine">
+      <img src="carbon.jpg" alt="Calcium Borogluconate">
+      <div class="info">
+        <h2>Calcium Borogluconate</h2>
+        <p><strong>Cost:</strong> ₹220</p>
+        <p><strong>Info:</strong> Used to treat milk fever and calcium deficiency.</p>
+        <p><strong>Steps:</strong> Inject slowly intravenously under vet supervision.</p>
+        <button class="buy-btn" onclick="makePayment(220, 'Calcium Borogluconate')">Buy</button>
+      </div>
+    </div>
+    <div class="medicine">
+      <img src="Enrofloxacin.jpg" alt="Enrofloxacin">
+      <div class="info">
+        <h2>Enrofloxacin</h2>
+        <p><strong>Cost:</strong> ₹300</p>
+        <p><strong>Info:</strong> Antibiotic for respiratory and gastrointestinal infections.</p>
+        <p><strong>Steps:</strong> Use as prescribed; intramuscular injection.</p>
+        <button class="buy-btn" onclick="makePayment(300, 'Enrofloxacin')">Buy</button>
+      </div>
+    </div>
+    <div class="medicine">
+      <img src="Ketroprofen.jpg" alt="Ketoprofen">
+      <div class="info">
+        <h2>Ketoprofen</h2>
+        <p><strong>Cost:</strong> ₹260</p>
+        <p><strong>Info:</strong> Anti-inflammatory and pain reliever.</p>
+        <p><strong>Steps:</strong> Inject intramuscularly or intravenously once daily.</p>
+        <button class="buy-btn" onclick="makePayment(260, 'Ketoprofen')">Buy</button>
+      </div>
+    </div>
+    <div class="medicine">
+      <img src="Albendazole.jpg" alt="Albendazole">
+      <div class="info">
+        <h2>Albendazole</h2>
+        <p><strong>Cost:</strong> ₹200</p>
+        <p><strong>Info:</strong> Dewormer effective against roundworms, tapeworms, and liver flukes.</p>
+        <p><strong>Steps:</strong> Oral administration with feed or water.</p>
+        <button class="buy-btn" onclick="makePayment(200, 'Albendazole')">Buy</button>
+      </div>
+    </div>
+    <div class="medicine">
+      <img src="Magnesium Sulphate.jpg" alt="Magnesium Sulphate">
+      <div class="info">
+        <h2>Magnesium Sulphate</h2>
+        <p><strong>Cost:</strong> ₹100</p>
+        <p><strong>Info:</strong> Used to treat constipation and bloat in cattle.</p>
+        <p><strong>Steps:</strong> Administer orally via drench.</p>
+        <button class="buy-btn" onclick="makePayment(100, 'Magnesium Sulphate')">Buy</button>
+      </div>
+    </div>
+    <div class="medicine">
+      <img src="Multivitamin.jpg" alt="Multivitamin Injection">
+      <div class="info">
+        <h2>Multivitamin Injection</h2>
+        <p><strong>Cost:</strong> ₹150</p>
+        <p><strong>Info:</strong> Provides essential vitamins for health and milk production.</p>
+        <p><strong>Steps:</strong> Inject intramuscularly or subcutaneously.</p>
+        <button class="buy-btn" onclick="makePayment(150, 'Multivitamin Injection')">Buy</button>
+      </div>
+    </div>
+    <div class="medicine">
+      <img src="Probiotic Blous.jpg" alt="Probiotic Bolus">
+      <div class="info">
+        <h2>Probiotic Bolus</h2>
+        <p><strong>Cost:</strong> ₹80</p>
+        <p><strong>Info:</strong> Improves digestion and gut health.</p>
+        <p><strong>Steps:</strong> Orally administered directly or via feed.</p>
+        <button class="buy-btn" onclick="makePayment(80, 'Probiotic Bolus')">Buy</button>
+      </div>
+    </div>
+    <div class="medicine">
+      <img src="liver tonic.jpg" alt="Liver Tonic">
+      <div class="info">
+        <h2>Liver Tonic</h2>
+        <p><strong>Cost:</strong> ₹190</p>
+        <p><strong>Info:</strong> Supports liver function and improves appetite.</p>
+        <p><strong>Steps:</strong> Administer orally or inject as prescribed.</p>
+        <button class="buy-btn" onclick="makePayment(190, 'Liver Tonic')">Buy</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy;  2025 AI for Livestock Health Monitoring System.</p>
+  </footer>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    function makePayment(amount, name) {
+      const options = {
+        key: "rzp_test_6aVHxhevQWHJNB",
+        key_secret: "9ELKHuwecxeG2cQcQPiWly7D",
+        amount: amount * 100,
+        currency: "INR",
+        name: "E-Bharat",
+        description: "for testing purpose",
+        handler: function (response) {
+          alert("Payment successful. Payment ID: " + response.razorpay_payment_id);
+        },
+        theme: {
+          color: "#065f46"
+        }
+      };
+      const rzp = new Razorpay(options);
+      rzp.open();
+    }
+
+    function toggleMenu(event) {
+      event.stopPropagation();
+      const dropdown = document.getElementById('dropdown');
+      const overlay = document.getElementById('overlay');
+      const isOpen = dropdown.classList.toggle('show');
+      overlay.style.display = isOpen ? 'block' : 'none';
+    }
+
+    document.addEventListener('click', function (event) {
+      const dropdown = document.getElementById('dropdown');
+      const overlay = document.getElementById('overlay');
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('show');
+        overlay.style.display = 'none';
+      }
+    });
+
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+      link.addEventListener('click', function () {
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById('dropdown').classList.remove('show');
+        document.getElementById('overlay').style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
